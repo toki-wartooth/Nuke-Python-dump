@@ -1,0 +1,1365 @@
+set cut_paste_input [stack 0]
+version 9.0 v3
+push $cut_paste_input
+Group {
+ name glow
+ tile_color 0xff00ff
+ gl_color 0xff
+ selected true
+ xpos -352
+ ypos -246
+ addUserKnob {20 User}
+ addUserKnob {6 effect_only +STARTLINE}
+ addUserKnob {41 operation T Merge36.operation}
+ addUserKnob {41 mix T Merge36.mix}
+ addUserKnob {26 ""}
+ addUserKnob {7 red_falloff l "red falloff" R 0 20}
+ red_falloff 1.25
+ addUserKnob {7 green_falloff l "green falloff" R 0 20}
+ green_falloff 1.25
+ addUserKnob {7 blue_falloff l "blue falloff" R 0 20}
+ blue_falloff 1.25
+ addUserKnob {4 blur_sample l "blur sample" M {0 1 2 3 4 5 6 7 8 9 10}}
+ blur_sample 10
+ addUserKnob {26 ""}
+ addUserKnob {7 size R 0 100}
+ size 25
+ addUserKnob {7 red R 0 5}
+ red 1.1
+ addUserKnob {7 green R 0 5}
+ green 1
+ addUserKnob {7 blue R 0 5}
+ blue 0.9
+ addUserKnob {26 ""}
+ addUserKnob {41 range T Keyer2.range}
+ addUserKnob {26 ""}
+ addUserKnob {41 filter T Red_Blur.filter}
+ addUserKnob {41 saturation T Saturation3.saturation}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 290
+  ypos 192
+ }
+ Dot {
+  name Dot30
+  xpos 324
+  ypos 240
+ }
+set N402a400 [stack 0]
+ Dot {
+  name Dot31
+  xpos 538
+  ypos 240
+ }
+set N402a000 [stack 0]
+ Keyer {
+  operation "luminance key"
+  name Keyer2
+  xpos 681
+  ypos 231
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle23
+  xpos 681
+  ypos 384
+ }
+push $N402a000
+ Saturation {
+  name Saturation3
+  xpos 504
+  ypos 312
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge35
+  xpos 504
+  ypos 384
+ }
+ Dot {
+  name Dot32
+  xpos 538
+  ypos 433
+ }
+set N4059400 [stack 0]
+ Dot {
+  name Dot2
+  xpos 2419
+  ypos 433
+ }
+set N4059000 [stack 0]
+ Dot {
+  name Dot3
+  xpos 4303
+  ypos 433
+ }
+ Shuffle {
+  in2 alpha
+  red blue
+  green blue
+  alpha blue
+  name B
+  xpos 4269
+  ypos 535
+ }
+set N4058800 [stack 0]
+ Dot {
+  name Dot49
+  xpos 4457
+  ypos 538
+ }
+set N4058400 [stack 0]
+ Dot {
+  name Dot50
+  xpos 4602
+  ypos 538
+ }
+set N4058000 [stack 0]
+ Dot {
+  name Dot51
+  xpos 4750
+  ypos 538
+ }
+set N4059c00 [stack 0]
+ Dot {
+  name Dot52
+  xpos 4907
+  ypos 538
+ }
+set N2e6f1c00 [stack 0]
+ Dot {
+  name Dot53
+  xpos 5062
+  ypos 538
+ }
+set N2e6f1800 [stack 0]
+ Dot {
+  name Dot54
+  xpos 5204
+  ypos 538
+ }
+set N2e6f1400 [stack 0]
+ Dot {
+  name Dot55
+  xpos 5390
+  ypos 538
+ }
+set N2e6f1000 [stack 0]
+ Dot {
+  name Dot56
+  xpos 5551
+  ypos 538
+ }
+set N2e6f0c00 [stack 0]
+ Dot {
+  name Dot57
+  xpos 5714
+  ypos 538
+ }
+set N2e6f0800 [stack 0]
+ Dot {
+  name Dot58
+  xpos 5893
+  ypos 538
+ }
+ Blur {
+  size {{parent.Red_Blur23.size*2}}
+  name Red_Blur22
+  label "\[value size]"
+  xpos 5859
+  ypos 584
+ }
+ Multiply {
+  value {{parent.Multiply24.value/falloff2.falloff}}
+  name Multiply23
+  label "\[value value]"
+  xpos 5859
+  ypos 641
+ }
+ Dot {
+  name Dot59
+  xpos 5893
+  ypos 1376
+ }
+push $N2e6f0800
+ Blur {
+  size {{parent.Red_Blur24.size*2}}
+  name Red_Blur23
+  label "\[value size]"
+  xpos 5680
+  ypos 583
+ }
+ Multiply {
+  value {{parent.Multiply25.value/falloff2.falloff}}
+  name Multiply24
+  label "\[value value]"
+  xpos 5680
+  ypos 641
+ }
+ Dot {
+  name Dot60
+  xpos 5714
+  ypos 1283
+ }
+push $N2e6f0c00
+ Blur {
+  size {{parent.Red_Blur25.size*2}}
+  name Red_Blur24
+  label "\[value size]"
+  xpos 5517
+  ypos 584
+ }
+ Multiply {
+  value {{parent.Multiply26.value/falloff2.falloff}}
+  name Multiply25
+  label "\[value value]"
+  xpos 5517
+  ypos 640
+ }
+ Dot {
+  name Dot61
+  xpos 5551
+  ypos 1203
+ }
+push $N2e6f1000
+ Blur {
+  size {{parent.Red_Blur26.size*2}}
+  name Red_Blur25
+  label "\[value size]"
+  xpos 5356
+  ypos 584
+ }
+ Multiply {
+  value {{parent.Multiply27.value/falloff2.falloff}}
+  name Multiply26
+  label "\[value value]"
+  xpos 5356
+  ypos 641
+ }
+ Dot {
+  name Dot62
+  xpos 5390
+  ypos 1134
+ }
+push $N2e6f1400
+ Blur {
+  size {{parent.Red_Blur27.size*2}}
+  name Red_Blur26
+  label "\[value size]"
+  xpos 5170
+  ypos 584
+ }
+ Multiply {
+  value {{parent.Multiply28.value/falloff2.falloff}}
+  name Multiply27
+  label "\[value value]"
+  xpos 5170
+  ypos 641
+ }
+ Dot {
+  name Dot63
+  xpos 5204
+  ypos 1057
+ }
+push $N2e6f1800
+ Blur {
+  size {{parent.Red_Blur28.size*2}}
+  name Red_Blur27
+  label "\[value size]"
+  xpos 5028
+  ypos 582
+ }
+ Multiply {
+  value {{parent.Multiply29.value/falloff2.falloff}}
+  name Multiply28
+  label "\[value value]"
+  xpos 5028
+  ypos 641
+ }
+ Dot {
+  name Dot64
+  xpos 5062
+  ypos 986
+ }
+push $N2e6f1c00
+ Blur {
+  size {{parent.Red_Blur29.size*2}}
+  name Red_Blur28
+  label "\[value size]"
+  xpos 4873
+  ypos 585
+ }
+ Multiply {
+  value {{parent.Multiply30.value/falloff2.falloff}}
+  name Multiply29
+  label "\[value value]"
+  xpos 4873
+  ypos 641
+ }
+ Dot {
+  name Dot65
+  xpos 4907
+  ypos 900
+ }
+push $N4059c00
+ Blur {
+  size {{parent.Red_Blur30.size*2}}
+  name Red_Blur29
+  label "\[value size]"
+  xpos 4716
+  ypos 584
+ }
+ Multiply {
+  value {{parent.Multiply31.value/falloff2.falloff}}
+  name Multiply30
+  label "\[value value]"
+  xpos 4716
+  ypos 641
+ }
+ Dot {
+  name Dot66
+  xpos 4750
+  ypos 832
+ }
+push $N4058000
+ Blur {
+  size {{parent.Red_Blur31.size*2}}
+  name Red_Blur30
+  label "\[value size]"
+  xpos 4568
+  ypos 584
+ }
+ Multiply {
+  value {{parent.Multiply32.value/falloff2.falloff}}
+  name Multiply31
+  label "\[value value]"
+  xpos 4568
+  ypos 641
+ }
+ Dot {
+  name Dot67
+  xpos 4602
+  ypos 777
+ }
+push $N4058400
+ Blur {
+  size {{parent.Blue_Blur32.size*2}}
+  name Red_Blur31
+  label "\[value size]"
+  xpos 4423
+  ypos 585
+ }
+ Multiply {
+  value {{parent.Multiply33.value/falloff2.falloff}}
+  name Multiply32
+  label "\[value value]"
+  xpos 4423
+  ypos 640
+ }
+ Dot {
+  name Dot68
+  xpos 4457
+  ypos 714
+ }
+push $N4058800
+ Blur {
+  size {{parent.blue*parent.size}}
+  name Blue_Blur32
+  label "\[value size]"
+  xpos 4269
+  ypos 586
+ }
+ Multiply {
+  name Multiply33
+  label "\[value value]"
+  xpos 4269
+  ypos 643
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge21
+  xpos 4269
+  ypos 711
+  disable {{"\[if \{\[value parent.blur_sample]>0\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge22
+  xpos 4269
+  ypos 774
+  disable {{"\[if \{\[value parent.blur_sample]>1\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge23
+  xpos 4269
+  ypos 829
+  disable {{"\[if \{\[value parent.blur_sample]>2\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge24
+  xpos 4269
+  ypos 897
+  disable {{"\[if \{\[value parent.blur_sample]>3\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge25
+  xpos 4269
+  ypos 983
+  disable {{"\[if \{\[value parent.blur_sample]>4\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge26
+  xpos 4269
+  ypos 1054
+  disable {{"\[if \{\[value parent.blur_sample]>5\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge27
+  xpos 4269
+  ypos 1131
+  disable {{"\[if \{\[value parent.blur_sample]>6\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge28
+  xpos 4269
+  ypos 1200
+  disable {{"\[if \{\[value parent.blur_sample]>7\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge29
+  xpos 4269
+  ypos 1280
+  disable {{"\[if \{\[value parent.blur_sample]>8\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge30
+  xpos 4269
+  ypos 1373
+  disable {{"\[if \{\[value parent.blur_sample]>9\} \{return 0\} \{return 1\}]"}}
+ }
+ Dot {
+  name Dot33
+  xpos 4303
+  ypos 1912
+ }
+push $N4059000
+ Shuffle {
+  red green
+  blue green
+  alpha green
+  name G
+  xpos 2385
+  ypos 519
+ }
+set N10633400 [stack 0]
+ Dot {
+  name Dot24
+  xpos 2573
+  ypos 522
+ }
+set N10633000 [stack 0]
+ Dot {
+  name Dot25
+  xpos 2718
+  ypos 522
+ }
+set N10632c00 [stack 0]
+ Dot {
+  name Dot26
+  xpos 2866
+  ypos 522
+ }
+set N10632800 [stack 0]
+ Dot {
+  name Dot27
+  xpos 3023
+  ypos 522
+ }
+set N10632400 [stack 0]
+ Dot {
+  name Dot28
+  xpos 3178
+  ypos 522
+ }
+set N10632000 [stack 0]
+ Dot {
+  name Dot29
+  xpos 3320
+  ypos 522
+ }
+set N10659c00 [stack 0]
+ Dot {
+  name Dot35
+  xpos 3506
+  ypos 522
+ }
+set N10659800 [stack 0]
+ Dot {
+  name Dot36
+  xpos 3667
+  ypos 522
+ }
+set N10659400 [stack 0]
+ Dot {
+  name Dot37
+  xpos 3830
+  ypos 522
+ }
+set N10659000 [stack 0]
+ Dot {
+  name Dot38
+  xpos 4009
+  ypos 522
+ }
+ Blur {
+  size {{parent.Red_Blur12.size*2}}
+  name Red_Blur11
+  label "\[value size]"
+  xpos 3975
+  ypos 568
+ }
+ Multiply {
+  value {{parent.Multiply13.value/falloff1.falloff}}
+  name Multiply12
+  label "\[value value]"
+  xpos 3975
+  ypos 625
+ }
+ Dot {
+  name Dot39
+  xpos 4009
+  ypos 1360
+ }
+push $N10659000
+ Blur {
+  size {{parent.Red_Blur13.size*2}}
+  name Red_Blur12
+  label "\[value size]"
+  xpos 3796
+  ypos 567
+ }
+ Multiply {
+  value {{parent.Multiply14.value/falloff1.falloff}}
+  name Multiply13
+  label "\[value value]"
+  xpos 3796
+  ypos 625
+ }
+ Dot {
+  name Dot40
+  xpos 3830
+  ypos 1267
+ }
+push $N10659400
+ Blur {
+  size {{parent.Red_Blur14.size*2}}
+  name Red_Blur13
+  label "\[value size]"
+  xpos 3633
+  ypos 568
+ }
+ Multiply {
+  value {{parent.Multiply15.value/falloff1.falloff}}
+  name Multiply14
+  label "\[value value]"
+  xpos 3633
+  ypos 624
+ }
+ Dot {
+  name Dot41
+  xpos 3667
+  ypos 1187
+ }
+push $N10659800
+ Blur {
+  size {{parent.Red_Blur15.size*2}}
+  name Red_Blur14
+  label "\[value size]"
+  xpos 3472
+  ypos 568
+ }
+ Multiply {
+  value {{parent.Multiply16.value/falloff1.falloff}}
+  name Multiply15
+  label "\[value value]"
+  xpos 3472
+  ypos 625
+ }
+ Dot {
+  name Dot42
+  xpos 3506
+  ypos 1118
+ }
+push $N10659c00
+ Blur {
+  size {{parent.Red_Blur16.size*2}}
+  name Red_Blur15
+  label "\[value size]"
+  xpos 3286
+  ypos 568
+ }
+ Multiply {
+  value {{parent.Multiply17.value/falloff1.falloff}}
+  name Multiply16
+  label "\[value value]"
+  xpos 3286
+  ypos 625
+ }
+ Dot {
+  name Dot43
+  xpos 3320
+  ypos 1041
+ }
+push $N10632000
+ Blur {
+  size {{parent.Red_Blur17.size*2}}
+  name Red_Blur16
+  label "\[value size]"
+  xpos 3144
+  ypos 566
+ }
+ Multiply {
+  value {{parent.Multiply18.value/falloff1.falloff}}
+  name Multiply17
+  label "\[value value]"
+  xpos 3144
+  ypos 625
+ }
+ Dot {
+  name Dot44
+  xpos 3178
+  ypos 970
+ }
+push $N10632400
+ Blur {
+  size {{parent.Red_Blur18.size*2}}
+  name Red_Blur17
+  label "\[value size]"
+  xpos 2989
+  ypos 569
+ }
+ Multiply {
+  value {{parent.Multiply19.value/falloff1.falloff}}
+  name Multiply18
+  label "\[value value]"
+  xpos 2989
+  ypos 625
+ }
+ Dot {
+  name Dot45
+  xpos 3023
+  ypos 884
+ }
+push $N10632800
+ Blur {
+  size {{parent.Red_Blur19.size*2}}
+  name Red_Blur18
+  label "\[value size]"
+  xpos 2832
+  ypos 568
+ }
+ Multiply {
+  value {{parent.Multiply20.value/falloff1.falloff}}
+  name Multiply19
+  label "\[value value]"
+  xpos 2832
+  ypos 625
+ }
+ Dot {
+  name Dot46
+  xpos 2866
+  ypos 816
+ }
+push $N10632c00
+ Blur {
+  size {{parent.Red_Blur20.size*2}}
+  name Red_Blur19
+  label "\[value size]"
+  xpos 2684
+  ypos 568
+ }
+ Multiply {
+  value {{parent.Multiply21.value/falloff1.falloff}}
+  name Multiply20
+  label "\[value value]"
+  xpos 2684
+  ypos 625
+ }
+ Dot {
+  name Dot47
+  xpos 2718
+  ypos 761
+ }
+push $N10633000
+ Blur {
+  size {{parent.Green_Blur21.size*2}}
+  name Red_Blur20
+  label "\[value size]"
+  xpos 2539
+  ypos 569
+ }
+ Multiply {
+  value {{parent.Multiply22.value/falloff1.falloff}}
+  name Multiply21
+  label "\[value value]"
+  xpos 2539
+  ypos 624
+ }
+ Dot {
+  name Dot48
+  xpos 2573
+  ypos 698
+ }
+push $N10633400
+ Blur {
+  size {{parent.green*parent.size}}
+  name Green_Blur21
+  label "\[value size]"
+  xpos 2385
+  ypos 569
+ }
+ Multiply {
+  name Multiply22
+  label "\[value value]"
+  xpos 2385
+  ypos 625
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge11
+  xpos 2385
+  ypos 695
+  disable {{"\[if \{\[value parent.blur_sample]>0\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge12
+  xpos 2385
+  ypos 758
+  disable {{"\[if \{\[value parent.blur_sample]>1\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge13
+  xpos 2385
+  ypos 813
+  disable {{"\[if \{\[value parent.blur_sample]>2\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge14
+  xpos 2385
+  ypos 881
+  disable {{"\[if \{\[value parent.blur_sample]>3\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge15
+  xpos 2385
+  ypos 967
+  disable {{"\[if \{\[value parent.blur_sample]>4\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge16
+  xpos 2385
+  ypos 1038
+  disable {{"\[if \{\[value parent.blur_sample]>5\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge17
+  xpos 2385
+  ypos 1115
+  disable {{"\[if \{\[value parent.blur_sample]>6\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge18
+  xpos 2385
+  ypos 1184
+  disable {{"\[if \{\[value parent.blur_sample]>7\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge19
+  xpos 2385
+  ypos 1264
+  disable {{"\[if \{\[value parent.blur_sample]>8\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge20
+  xpos 2385
+  ypos 1357
+  disable {{"\[if \{\[value parent.blur_sample]>9\} \{return 0\} \{return 1\}]"}}
+ }
+ Dot {
+  name Dot34
+  xpos 2419
+  ypos 1834
+ }
+push $N4059400
+ Shuffle {
+  in2 alpha
+  green red
+  blue red
+  alpha red2
+  name R
+  xpos 504
+  ypos 506
+ }
+set N107a3c00 [stack 0]
+ Dot {
+  name Dot4
+  xpos 692
+  ypos 509
+ }
+set N107a3800 [stack 0]
+ Dot {
+  name Dot6
+  xpos 837
+  ypos 509
+ }
+set N107a3400 [stack 0]
+ Dot {
+  name Dot8
+  xpos 985
+  ypos 509
+ }
+set N107a3000 [stack 0]
+ Dot {
+  name Dot10
+  xpos 1142
+  ypos 509
+ }
+set N107a2c00 [stack 0]
+ Dot {
+  name Dot12
+  xpos 1297
+  ypos 509
+ }
+set N107a2800 [stack 0]
+ Dot {
+  name Dot14
+  xpos 1439
+  ypos 509
+ }
+set N107a2400 [stack 0]
+ Dot {
+  name Dot16
+  xpos 1625
+  ypos 509
+ }
+set N107a2000 [stack 0]
+ Dot {
+  name Dot18
+  xpos 1786
+  ypos 509
+ }
+set N107c3c00 [stack 0]
+ Dot {
+  name Dot20
+  xpos 1949
+  ypos 509
+ }
+set N107c3800 [stack 0]
+ Dot {
+  name Dot22
+  xpos 2128
+  ypos 509
+ }
+ Blur {
+  size {{parent.Red_Blur9.size*2}}
+  name Red_Blur10
+  label "\[value size]"
+  xpos 2094
+  ypos 555
+ }
+ Multiply {
+  value {{parent.Multiply10.value/falloff.falloff}}
+  name Multiply11
+  label "\[value value]"
+  xpos 2094
+  ypos 612
+ }
+ Dot {
+  name Dot23
+  xpos 2128
+  ypos 1347
+ }
+push $N107c3800
+ Blur {
+  size {{parent.Red_Blur8.size*2}}
+  name Red_Blur9
+  label "\[value size]"
+  xpos 1915
+  ypos 554
+ }
+ Multiply {
+  value {{parent.Multiply9.value/falloff.falloff}}
+  name Multiply10
+  label "\[value value]"
+  xpos 1915
+  ypos 612
+ }
+ Dot {
+  name Dot21
+  xpos 1949
+  ypos 1254
+ }
+push $N107c3c00
+ Blur {
+  size {{parent.Red_Blur7.size*2}}
+  name Red_Blur8
+  label "\[value size]"
+  xpos 1752
+  ypos 555
+ }
+ Multiply {
+  value {{parent.Multiply8.value/falloff.falloff}}
+  name Multiply9
+  label "\[value value]"
+  xpos 1752
+  ypos 611
+ }
+ Dot {
+  name Dot19
+  xpos 1786
+  ypos 1174
+ }
+push $N107a2000
+ Blur {
+  size {{parent.Red_Blur6.size*2}}
+  name Red_Blur7
+  label "\[value size]"
+  xpos 1591
+  ypos 555
+ }
+ Multiply {
+  value {{parent.Multiply7.value/falloff.falloff}}
+  name Multiply8
+  label "\[value value]"
+  xpos 1591
+  ypos 612
+ }
+ Dot {
+  name Dot17
+  xpos 1625
+  ypos 1105
+ }
+push $N107a2400
+ Blur {
+  size {{parent.Red_Blur5.size*2}}
+  name Red_Blur6
+  label "\[value size]"
+  xpos 1405
+  ypos 555
+ }
+ Multiply {
+  value {{parent.Multiply6.value/falloff.falloff}}
+  name Multiply7
+  label "\[value value]"
+  xpos 1405
+  ypos 612
+ }
+ Dot {
+  name Dot15
+  xpos 1439
+  ypos 1028
+ }
+push $N107a2800
+ Blur {
+  size {{parent.Red_Blur4.size*2}}
+  name Red_Blur5
+  label "\[value size]"
+  xpos 1263
+  ypos 553
+ }
+ Multiply {
+  value {{parent.Multiply5.value/falloff.falloff}}
+  name Multiply6
+  label "\[value value]"
+  xpos 1263
+  ypos 612
+ }
+ Dot {
+  name Dot13
+  xpos 1297
+  ypos 957
+ }
+push $N107a2c00
+ Blur {
+  size {{parent.Red_Blur3.size*2}}
+  name Red_Blur4
+  label "\[value size]"
+  xpos 1108
+  ypos 556
+ }
+ Multiply {
+  value {{parent.Multiply4.value/falloff.falloff}}
+  name Multiply5
+  label "\[value value]"
+  xpos 1108
+  ypos 612
+ }
+ Dot {
+  name Dot11
+  xpos 1142
+  ypos 871
+ }
+push $N107a3000
+ Blur {
+  size {{parent.Red_Blur2.size*2}}
+  name Red_Blur3
+  label "\[value size]"
+  xpos 951
+  ypos 555
+ }
+ Multiply {
+  value {{parent.Multiply3.value/falloff.falloff}}
+  name Multiply4
+  label "\[value value]"
+  xpos 951
+  ypos 612
+ }
+ Dot {
+  name Dot9
+  xpos 985
+  ypos 803
+ }
+push $N107a3400
+ Blur {
+  size {{parent.Red_Blur1.size*2}}
+  name Red_Blur2
+  label "\[value size]"
+  xpos 803
+  ypos 555
+ }
+ Multiply {
+  value {{parent.Multiply2.value/falloff.falloff}}
+  name Multiply3
+  label "\[value value]"
+  xpos 803
+  ypos 612
+ }
+ Dot {
+  name Dot7
+  xpos 837
+  ypos 748
+ }
+push $N107a3800
+ Blur {
+  size {{parent.Red_Blur.size*2}}
+  name Red_Blur1
+  label "\[value size]"
+  xpos 658
+  ypos 555
+ }
+ Multiply {
+  value {{parent.Multiply1.value/falloff.falloff}}
+  name Multiply2
+  label "\[value value]"
+  xpos 658
+  ypos 612
+ }
+ Dot {
+  name Dot5
+  xpos 692
+  ypos 685
+ }
+push $N107a3c00
+ Blur {
+  size {{parent.red*parent.size}}
+  name Red_Blur
+  label "\[value size]"
+  xpos 504
+  ypos 555
+ }
+ Multiply {
+  name Multiply1
+  label "\[value value]"
+  xpos 504
+  ypos 612
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge1
+  xpos 504
+  ypos 682
+  disable {{"\[if \{\[value parent.blur_sample]>0\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge2
+  xpos 504
+  ypos 745
+  disable {{"\[if \{\[value parent.blur_sample]>1\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge3
+  xpos 504
+  ypos 800
+  disable {{"\[if \{\[value parent.blur_sample]>2\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge4
+  xpos 504
+  ypos 868
+  disable {{"\[if \{\[value parent.blur_sample]>3\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge5
+  xpos 504
+  ypos 954
+  disable {{"\[if \{\[value parent.blur_sample]>4\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge6
+  xpos 504
+  ypos 1025
+  disable {{"\[if \{\[value parent.blur_sample]>5\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge7
+  xpos 504
+  ypos 1102
+  disable {{"\[if \{\[value parent.blur_sample]>6\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge8
+  xpos 504
+  ypos 1171
+  disable {{"\[if \{\[value parent.blur_sample]>7\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge9
+  xpos 504
+  ypos 1251
+  disable {{"\[if \{\[value parent.blur_sample]>8\} \{return 0\} \{return 1\}]"}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge10
+  xpos 504
+  ypos 1344
+  disable {{"\[if \{\[value parent.blur_sample]>9\} \{return 0\} \{return 1\}]"}}
+ }
+ Copy {
+  inputs 2
+  from0 rgba.green
+  to0 rgba.green
+  from1 -rgba.alpha
+  to1 -rgba.green
+  name Copy1
+  xpos 504
+  ypos 1825
+ }
+ Copy {
+  inputs 2
+  from0 rgba.blue
+  to0 rgba.blue
+  from1 -rgba.alpha
+  to1 -rgba.green
+  name Copy15
+  xpos 504
+  ypos 1903
+ }
+set N108d6400 [stack 0]
+ Dot {
+  name Dot1
+  xpos 538
+  ypos 2010
+ }
+push $N108d6400
+push $N402a400
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge36
+  xpos 290
+  ypos 1909
+ }
+ Switch {
+  inputs 2
+  which {{parent.effect_only}}
+  name Switch1
+  xpos 290
+  ypos 2007
+ }
+ Output {
+  name Output1
+  xpos 290
+  ypos 2084
+ }
+ NoOp {
+  inputs 0
+  name falloff2
+  xpos 5030
+  ypos 240
+  hide_input true
+  addUserKnob {20 User}
+  addUserKnob {7 falloff R 0 4}
+  falloff {{parent.blue_falloff}}
+ }
+ NoOp {
+  inputs 0
+  name falloff1
+  xpos 3215
+  ypos 214
+  hide_input true
+  addUserKnob {20 User}
+  addUserKnob {7 falloff R 0 4}
+  falloff {{parent.green_falloff}}
+ }
+ NoOp {
+  inputs 0
+  name falloff
+  xpos 1309
+  ypos 230
+  hide_input true
+  addUserKnob {20 User}
+  addUserKnob {7 falloff R 0 4}
+  falloff {{parent.red_falloff}}
+ }
+end_group
